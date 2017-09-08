@@ -1,0 +1,20 @@
+#script to run FineRADstructure
+#version beta
+#16-03-2017 - QR
+#Please read the appropriate paperS:
+Lawson DJ, Hellenthal G, Myers S, Falush D (2012) Inference of Population Structure using Dense Haplotype Data. PLoS Genet 8(1): e1002453. doi:10.1371/journal.pgen.1002453
+
+Malinsky, Trucchi, Lawson and Falush (2016), "RADpainter and fineRADstructure: population inference from RADseq data".
+
+
+#input file needed: a plink ped file 
+#here I provide a very small ped file as a learning tool
+#You first need to install FineRADstructure available at:
+git clone https://github.com/millanek/fineRADstructure
+
+#Run the pipeline as follows:
+./00-scripts/00.reshape.plink 01-input/salmon.toy.ped
+./00-scripts/01.fineStructure.sh
+./00-scripts/02.plotFineStructure.sh
+
+#this will produce pdf file of ancestry matrix in the 02-output folder

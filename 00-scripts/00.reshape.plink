@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#script to run fineStructure
+INPUT=$1 #plink ped file
+
+#1.reshape plink ped into a matrix
+Rscript ./00-scripts/rscript/00.ped2genotype.R $INPUT #will produce an output file for RAD painter
+
+sed -i 's/-/_/g' 01-input/genotypic_matrix.txt
+sed -i "s/TRUE/T/g" 01-input/genotypic_matrix.txt
